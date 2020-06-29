@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_content %}
+<title>@{{ user.username }} | Pinterest</title>
+{% endblock %}
+
+{% block container %}
+    <div class="container mb-5 container_detail" style="margin-top: 6em;">
+        
+        <div class="user_detail">
+            
+            <section class="board_info">
+                    <h1 class="title">{{ board.title }}</h1>
+            </section>
+
+            <br>
+
+            {% if request.user.username == board.user.username %}
+                <section class="icons_container">
+
+                    <a href="{% url 'posts:addToBoard' %}?board={{board.id}}">
+                        <figure class="icon_detail">
+                            <img src="{% static 'icons/plus.png' %}" alt="">
+                        </figure>
+                    </a>
+
+                </section>
+            {% endif %}
+
+        </div>
+        
+    </div>
+
+    <section class="posts"> 
+            <div class="card-columns" style="margin-top: 3em;">
+                {% for post in posts %}
+                    {% include "posts/post_card.html" %}
+                {% endfor %}
+            </div>
+    </section>
+{% endblock %}

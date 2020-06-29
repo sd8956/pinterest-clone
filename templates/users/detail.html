@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_content %}
+<title>@{{ user.username }} | Pinterest</title>
+{% endblock %}
+
+{% block container %}
+    <div class="container mb-5 container_detail" style="margin-top: 6em;">
+        
+        <div class="user_detail">
+
+            {% if request.user.username == user.username %}
+                <section class="icons_container">
+
+                    <ul>
+                        <li>
+                        <a href="">
+                            <figure class="icon_detail">
+                                <img src="{% static 'icons/plus.png' %}" alt="">
+                            </figure>
+                        </a>
+                            <ul>
+                                <li><a href="{% url 'posts:create' %}">Create Pin |</a></li>
+                                <li><a href="{% url 'boards:create' %}"> Create Board</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <a href="{% url 'users:update' %}" style="margin-left: 15px;">
+                        <figure class="icon_detail">
+                            <img src="{% static 'icons/pencil.png' %}" alt="">
+                        </figure>
+                    </a>
+
+                </section>
+            {% endif %}
+
+            <br>
+            
+            <section class="info_container">
+                <div>
+                    <h1 class="username">{{ user.username }}</h1>
+                    <span>{{ user.get_full_name }}</span>
+                </div>
+                <div class="profile_image">
+                    {% if user.profile.picture %}
+                            <img src="{{ user.profile.picture.url }}" height="130" class="d-inline-block align-top rounded-circle"/>
+                    {% else%}
+                            <img src="{% static 'img/default-profile.png' %}" height="130" class="d-inline-block align-top rounded-circle"/>
+                    {% endif %}
+                </div>
+            </section>
+            <br><br>
+            <section class="detail_options">
+
+                    <div class="{% if board %} selected {% endif %}">
+                        <a href="{% url 'users:detail' user.username %}">
+                            <h3>Boards</h3>
+                        </a>
+                    </div>
+                    <div class="{% if pin  %} selected {% endif %}">
+                        <a href="{% url 'users:detailPin' user.username %}">
+                            <h3>Pins</h3>
+                        </a>
+                    </div>
+
+            </section>
+
+
+        </div>
+        
+    </div>
+
+    <section class="posts"> 
+        {% if board %} 
+            <div class="card-deck">
+                {% for board in boards %}
+                        {% include "boards/board_card.html" %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="card-columns" style="margin-top: 3em;">
+                {% for post in posts %}
+                    {% include "posts/post_card.html" %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}

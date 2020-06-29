@@ -1,0 +1,53 @@
+.min_container{
+    width: 95%;
+}
+
+.image_card {
+    width: 100%; 
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.card-columns {
+    column-count: 4;
+}
+
+@media (max-width: 1000px) {
+    .card-columns {
+        column-count: 2;
+    }
+    .search_input {
+        display: none;
+    }
+}
+
+.search_input {
+    border-radius: 25px;
+    border: 0px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    padding-left: 15;
+    width: 100%;
+    outline: none;
+}
+
+.container_search {
+    width: 80%;
+}
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .fa {
+    position: absolute;
+    padding: 13px;
+    pointer-events: none;
+}
+.left-addon .fa {
+    left: 0px;
+}
+
+.left-addon input {
+    padding-left: 30px;
+}

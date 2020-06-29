@@ -1,0 +1,278 @@
+html, body {
+    background: #fafafa;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#auth-container {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+}
+
+#main-navbar {
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+}
+
+.nav-icon a {
+    color: #262626;
+    font-size: 1.3em;
+    display: block;
+    margin-top: .2em;
+    margin-left: 1.2em;
+    font-weight: 100;
+}
+.nav-icon a:hover {
+    color: #1d5e72;;
+}
+#profile-box {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.0975);
+    border-radius: 1px;
+    margin-top: 6em;
+}
+
+#user-posts #post-thumb {
+    background: #fff;
+}
+
+.user_detail {
+    width: 70%;
+}
+
+.container_detail {
+    display: flex;
+    justify-content: center;
+}
+
+.icons_container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.icons_container ul {
+    list-style: none;
+}
+
+.icons_container li {
+    float:left;
+}
+
+.icons_container li a {
+    background-color:#fafafa;
+    color: black;
+    padding-left: 5px;
+    text-decoration:none;   
+    display:block;
+}
+
+.icons_container li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.icons_container li:hover > ul {
+    display:block;
+}
+
+.icons_container li ul li {
+    position:relative;
+}
+
+.icons_container li ul li ul {
+    right:-140px;
+    top:0px;
+}
+
+.icon_detail:hover {
+    background-color: #f2f2f2;
+}
+
+.icon_detail {
+    width:  60px;
+    height: 60px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_detail img {
+    width: 30px;
+    height: 30px;
+}
+
+.info_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.info_container div {
+    width: 50%;
+}
+
+.username {
+    font-family: sans-serif;
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.info_container div span {
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.profile_image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.detail_options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail_options div {
+    border-radius: 100px;
+    height: 45px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 7px 0 7px;
+}
+
+.detail_options div:hover {
+    background-color: #f2f2f2;
+}
+
+.detail_options div a {
+    text-decoration: none;
+}
+
+.detail_options div a h3 {
+    font-family: sans-serif;
+    font-size: 25px;
+    color: black;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.selected {
+    background-color: black;
+    border-radius: 100;
+}
+
+.selected a h3 {
+    color: white !important;
+}
+
+.selected:hover {
+    background-color: black !important;
+}
+
+.card_custom {
+    margin: 20px;
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.card_custom div h3 {
+    font-family: sans-serif;
+    font-size: 25px;
+    color: black;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.card_custom div span {
+    font-family: sans-serif;
+}
+.card_custom:hover {
+    background-color: #f2f2f2;
+}
+
+.detail_post {
+    display: flex;
+    border-radius: 50px;
+    flex-direction: row;
+    height: 1000px;
+    background-color: white;
+    box-shadow: -3px -2px 35px #4a4a4a;
+}
+
+.detail_post div {
+    width: 50%;
+}
+
+.detail_post_u {
+    padding: 20px;
+}
+
+.detail_post_u div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.detail_post_u div a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.img_detail {
+    height: 100%;
+    width: 100%;
+}
+
+.img_detail img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px 0 0 50px;
+}
+
+.form_coment {
+    display: flex;
+}
+
+.form_coment input {
+    border-radius: 20px;
+}
+
+.a_board_card {
+    text-decoration: none;
+    color: black;
+}
+
+.a_board_card:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.board_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board_info .title {
+    font-family: sans-serif;
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+    text-transform: capitalize;
+}

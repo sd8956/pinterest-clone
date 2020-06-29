@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_content %}
+    <title>Pinterest</title>
+{% endblock%}
+
+{% block container %}
+    <br>
+    <br>
+    <br>
+    <section class="detail_post">
+        <div>
+            <figure class="img_detail">
+                <img src="{{ post.photo.url }}" alt="" class="img-fluid">
+            </figure>
+        </div>
+        <div class="detail_post_u">
+            <h1>{{ post.title }}</h1>
+            <div>
+                <a href="{% url 'users:detail' post.user.username %}">
+                    {% if post.user.profile.picture %}
+                        <img src="{{ post.user.profile.picture.url }}" height="55" class="d-inline-block align-top rounded-circle"/>
+                    {% else%}
+                        <img src="{% static 'img/default-profile.png' %}" height="55" class="d-inline-block align-top rounded-circle"/>
+                    {% endif %}
+                </a>
+                <a href="{% url 'users:detail' post.user.username %}">{{post.user.username}}</a>
+            </div>
+
+            <!-- <div>
+                <form action="" class="form_coment">
+                    <a href="{% url 'users:detail' request.user.username %}">
+                        {% if request.user.profile.picture %}
+                            <img src="{{ request.user.profile.picture.url }}" height="55" class="d-inline-block align-top rounded-circle"/>
+                        {% else%}
+                            <img src="{% static 'img/default-profile.png' %}" height="55" class="d-inline-block align-top rounded-circle"/>
+                        {% endif %}
+                    </a>
+                    <input type="text" placeholder="Coment">
+                </form>
+            </div> -->
+        </div>
+    </section>
+{% endblock %}
+

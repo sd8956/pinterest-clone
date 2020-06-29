@@ -1,0 +1,24 @@
+{% load post_extras %}
+
+<div class="card_custom">
+        <div class="card-columns">
+            {% for post in posts %}
+                {% if post.board == board %}
+                    <div class="">
+                        <a>
+                            <img class="image_card" src="{{ post.photo.url }}" alt="{{ post.title }}">
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+        <a href="{% url 'boards:detail' board.id %}" class="a_board_card">
+            <div class="">
+                <h3>{{ board.title }}</h3>
+                <span>
+                    {{ posts|remainder:board }} Pines
+                </span>
+            </div>
+        </a>
+</div>

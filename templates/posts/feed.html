@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_content %}
+    <title>Pinterest</title>
+{% endblock%}
+
+{% block container %}
+
+    <div class="card-columns" style="margin-top: 6em;">
+        {% for post in posts %}
+            {% include "posts/post_card.html" %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
