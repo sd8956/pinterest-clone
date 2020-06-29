@@ -8,9 +8,9 @@
 
         <div class="collapse navbar-collapse container_search">
             <div class="inner-addon left-addon min_container">
-                <form action="{% url 'posts:feed' %}">
+                <form action="{% url 'posts:feed' %}" method="GET">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    <input type="text" class="search_input" placeholder="Search....">
+                    <input type="text" class="search_input" name="filter" placeholder="Search....">
                 </form>
             </div>
         </div>

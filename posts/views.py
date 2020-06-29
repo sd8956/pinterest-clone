@@ -20,6 +20,16 @@ class PostsFeedView(LoginRequiredMixin, ListView):
     ordering = ('-created')
     context_object_name = 'posts'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        fil = self.request.GET.get('filter')
+        if not fil:
+            fil = ''
+
+        context['posts'] = Post.objects.filter(title__contains = fil)
+        return context
+
 
 class DetailPostView(LoginRequiredMixin, DetailView):
     """Detail a specific post"""
