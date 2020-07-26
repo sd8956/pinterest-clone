@@ -6,7 +6,12 @@ Clon de pinterest
 ## ▶️ Prepare the project
 
 - Create a virtual enviroment
+
+### `virtualenv venv`
+
 - Install the dependences of requirements.txt
+
+### `pip install -r requirements.txt`
 
 ## ▶️ Available Scripts
 
